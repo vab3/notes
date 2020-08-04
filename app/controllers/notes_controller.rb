@@ -1,10 +1,22 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate, only: [:show, :edit, :update, :destroy]
+
+  def authenticate
+    unless current_user.id == @note.user_id
+      redirect_to notes_path,
+        alert: 'You are not authorized to view this page.'
+    end
+  end
 
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all
+    if current_user.is_admin
+      @notes = Note.all
+    else
+      @notes = current_user.notes
+    end
   end
 
   # GET /notes/1
