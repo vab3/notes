@@ -21,13 +21,13 @@
                 <% end %>
     </p>
 
-
-    <% if notice %>
+    <p> alerts </p>
+    <%# <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
+    <%# <% end %>
+    <%# <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+    <%# <% end %>
     <%= yield %>
   </body>
 </html>
