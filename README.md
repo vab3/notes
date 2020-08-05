@@ -10,4 +10,7 @@ rails db:create
 rails db:migrate
 rails s
 ```
-
+To run tests
+```
+rails test
+```
