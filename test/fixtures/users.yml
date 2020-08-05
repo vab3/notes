@@ -6,6 +6,6 @@ one:
   last_name: MyString
 
 two:
-  email: MyString
+  email: MyString2
   first_name: MyString
   last_name: MyString
